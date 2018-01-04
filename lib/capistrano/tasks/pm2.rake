@@ -70,7 +70,7 @@ namespace :pm2 do
   def app_status
     within release_path do
       with fetch(:pm2_env_variables) do
-        ps = JSON.parse(capture :pm2, :jlist, :'-s')
+        ps = JSON.parse(capture :pm2, :jlist)
 
         # find the process with our app name
         ps.each do |child|
